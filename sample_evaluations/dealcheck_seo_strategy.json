@@ -1,5 +1,5 @@
 {
-  "executive_summary": "DealCheck currently holds strong niche authority in terms calculation (e.g., IRR equation, deal screening criteria) and ranks moderately well for high-intent software terms. However, significant traffic and valuable commercial/informational intent are being lost to competitors like HouseCanary on broad core real estate definitions, valuations, and market prediction queries. By leveraging low-difficulty, high-volume keywords such as 'cap rate california', 'mls real estate api tools', and 'is the housing market going to crash', DealCheck can capture high-intent users, bridge competitor gaps, and drive substantial conversions for real estate investment software.",
+  "executive_summary": "An analysis of current organic rankings and competitor gaps reveals massive potential to capture high-volume informational and commercial traffic in the real estate niche. While DealCheck dominates mid-tail financial metric terms like 'irr equation', competitors like HouseCanary are capturing critical top-of-funnel traffic for high-volume terms such as 'what is a cap rate' and localized market data. By prioritizing low-hanging fruit keywords, expanding our landing page architecture, and executing strategic link-building campaigns with high-DA referring domains, DealCheck can exponentially increase its organic visibility and capture lucrative commercial queries.",
   "top_keyword_opportunities": [
     {
       "keyword": "cap rate california",
@@ -7,7 +7,7 @@
       "keyword_difficulty": 12,
       "cpc": 0.81,
       "intent": "Informational",
-      "strategic_value": "Extremely low difficulty (12) for a massive search volume (5,400) with localized investor intent."
+      "strategic_value": "Extremely low difficulty for high volume, highly targeted by region and investment intent."
     },
     {
       "keyword": "mls real estate api tools niche saas opportunity",
@@ -15,7 +15,15 @@
       "keyword_difficulty": 13,
       "cpc": 0.0,
       "intent": "Informational",
-      "strategic_value": "Highly relevant to software buyers and developers looking for real estate data tools, matching DealCheck's SaaS product offering."
+      "strategic_value": "Captures B2B and advanced investor search traffic with virtually no keyword barrier."
+    },
+    {
+      "keyword": "what is cap rate",
+      "search_volume": 5400,
+      "keyword_difficulty": 45,
+      "cpc": 0.13,
+      "intent": "Informational",
+      "strategic_value": "Foundational real estate investment concept with massive volume and direct product-led bridge."
     },
     {
       "keyword": "is the housing market going to crash",
@@ -23,7 +31,7 @@
       "keyword_difficulty": 35,
       "cpc": 1.3,
       "intent": "Informational",
-      "strategic_value": "Massive search volume with moderate difficulty. Captures top-of-funnel investors looking for guidance before making buying decisions."
+      "strategic_value": "High-urgency market trends query that builds massive top-of-funnel brand awareness."
     },
     {
       "keyword": "cap rate formula",
@@ -31,69 +39,81 @@
       "keyword_difficulty": 41,
       "cpc": 0.19,
       "intent": "Informational",
-      "strategic_value": "Directly targets calculation intent, allowing us to funnel users from learning the formula straight to using DealCheck's calculator."
-    },
-    {
-      "keyword": "real estate investment software",
-      "search_volume": 1900,
-      "keyword_difficulty": 39,
-      "cpc": 12.96,
-      "intent": "Commercial, Informational",
-      "strategic_value": "High commercial intent and expensive CPC ($12.96). Improving current rankings from #8 to the top 3 will drive direct product trials."
+      "strategic_value": "High intent match for users actively evaluating property profitability using software tools."
     }
   ],
   "suggested_landing_pages": [
     {
-      "title": "California Real Estate Cap Rate Calculator & Guide",
-      "slug": "/calculators/cap-rate-california",
+      "title": "California Cap Rate Calculator & Market Analysis Tool",
+      "slug": "california-cap-rate-calculator",
       "target_keyword": "cap rate california",
-      "main_cta": "Analyze a California Property Free",
+      "main_cta": "Calculate California Property Returns",
       "suggested_structure": [
-        "Introduction to California Market Cap Rates",
-        "Interactive California Cap Rate Calculator",
-        "Average Cap Rates by Major CA Metro Areas (Los Angeles, SF, San Diego)",
-        "Factors Impacting CA Investment Yields",
-        "CTA to DealCheck Software"
+        "Hero Section with Regional Property Calculator",
+        "Current California Real Estate Market Trends",
+        "How to Calculate Cap Rate in Major CA Metro Areas",
+        "Interactive Investment Comparison Table",
+        "Bottom of Page CTA: Analyze Your CA Deal Free"
       ]
     },
     {
-      "title": "Real Estate API & Data Integration Tools for Developers",
-      "slug": "/tools/real-estate-api-tools",
-      "target_keyword": "mls real estate api tools niche saas opportunity",
-      "main_cta": "Explore DealCheck API Documentation",
+      "title": "Real Estate Investment Calculator & Property Analysis Software",
+      "slug": "real-estate-investment-software",
+      "target_keyword": "real estate investment software",
+      "main_cta": "Start Free Property Analysis",
       "suggested_structure": [
-        "Overview of Property Data and MLS APIs",
-        "Key Features to Look for in Real Estate APIs",
-        "Use Cases for Niche PropTech SaaS",
-        "How DealCheck Powers Real Estate Data",
-        "Request API Access"
+        "Hero Section Highlighting Fast Underwriting",
+        "Core Features: Rental Analysis, Comps, and Projections",
+        "Comparison with Traditional Spreadsheets",
+        "Customer Testimonials and Success Stories",
+        "Final CTA: Create Free Account"
       ]
     }
   ],
   "suggested_blog_topics": [
     {
-      "title": "Is the Housing Market Going to Crash? 2024-2025 Analysis for Investors",
+      "title": "What Is a Cap Rate? The Definitive Guide for Real Estate Investors",
+      "target_keyword": "what is a cap rate",
+      "primary_intent": "Informational",
+      "key_talking_points": [
+        "Definition and importance of capitalization rate",
+        "Step-by-step breakdown of the cap rate formula",
+        "What constitutes a good cap rate by market",
+        "Limitations of cap rates and how to use them with ROI and IRR"
+      ],
+      "lead_magnet": "Free Real Estate Investment Calculator Spreadsheet & App"
+    },
+    {
+      "title": "Is the Housing Market Going to Crash? Predictions for 2026",
       "target_keyword": "is the housing market going to crash",
       "primary_intent": "Informational",
       "key_talking_points": [
-        "Current macroeconomic indicators vs. 2008",
-        "Inventory levels and interest rate impacts",
-        "Regional variations in housing corrections",
-        "Actionable strategies for real estate investors in shifting markets"
+        "Current inventory levels and interest rate impacts",
+        "Expert forecasts on housing market corrections",
+        "How investors can protect capital during economic shifts",
+        "Identifying recession-proof rental markets"
       ],
-      "lead_magnet": "Free Market Crash Preparedness Checklist for Investors"
+      "lead_magnet": "2026 Market Crash Checklist & Deal Screening Guide"
+    }
+  ],
+  "suggested_backlink_campaigns": [
+    {
+      "domain": "rentcast.io",
+      "authority_score": 70,
+      "strategic_angle": "Propose an API and data integration partnership or mutual resource page listing for complementary property evaluation platforms.",
+      "anchor_text_suggestion": "DealCheck rental property analyzer"
     },
     {
-      "title": "The Ultimate Cap Rate Formula Guide: How to Calculate & What is Good",
-      "target_keyword": "cap rate formula",
-      "primary_intent": "Informational",
-      "key_talking_points": [
-        "Step-by-step breakdown of Net Operating Income (NOI)",
-        "The standard cap rate equation with examples",
-        "Limitations of cap rates and when to use IRR or Cash-on-Cash",
-        "How automated calculators save time"
-      ],
-      "lead_magnet": "Free Real Estate Deal Analysis Spreadsheet Template"
+      "domain": "realwealth.com",
+      "authority_score": 42,
+      "strategic_angle": "Contribute an expert guest column on beginner rental property underwriting workflows featuring our analysis framework.",
+      "anchor_text_suggestion": "DealCheck software"
+    },
+    {
+      "domain": "w2capitalist.com",
+      "authority_score": 51,
+      "strategic_angle": "Collaborate on a roundup review of automated productivity and underwriting tools tailored for busy working professionals.",
+      "anchor_text_suggestion": "Underwrite Any Investment Property in Minutes"
     }
   ]
 }

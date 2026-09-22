@@ -51,9 +51,16 @@ class BlogTopic(BaseModel):
     key_talking_points: List[str]
     lead_magnet: str
 
+class BacklinkCampaignIdea(BaseModel):
+    domain: str = Field(description="The source referring domain or category (e.g. rentcast.io, biggerpockets.com)")
+    authority_score: int = Field(description="Domain authority score from the backlink data (e.g. 70, 51)")
+    strategic_angle: str = Field(description="Campaign angle to secure a backlink (e.g. affiliate partnership, calculator embed)")
+    anchor_text_suggestion: str = Field(description="Optimal anchor text linking back to our platform")
+
 class SEOStrategyResponse(BaseModel):
     executive_summary: str = Field(description="Overview of the organic SEO opportunity based on competitor data")
     top_keyword_opportunities: List[SEOKeywordOpportunity]
     suggested_landing_pages: List[LandingPageIdea]
     suggested_blog_topics: List[BlogTopic]
+    suggested_backlink_campaigns: List[BacklinkCampaignIdea]
 
