@@ -1,92 +1,99 @@
 {
-  "executive_summary": "The competitor data reveals a powerful dual-funnel SEO opportunity. First, high-intent commercial terms like 'real estate investment software' (CPC $12.96) offer immediate SaaS acquisition potential. Second, low-difficulty informational 'how-to' queries such as 'how to quickly screen real estate deals criteria' and calculation equations like 'irr equation' already drive strong baseline traffic and can be aggressively monetized as top-of-funnel conversion magnets into a deal analysis software platform.",
+  "executive_summary": "DealCheck currently holds strong niche authority in terms calculation (e.g., IRR equation, deal screening criteria) and ranks moderately well for high-intent software terms. However, significant traffic and valuable commercial/informational intent are being lost to competitors like HouseCanary on broad core real estate definitions, valuations, and market prediction queries. By leveraging low-difficulty, high-volume keywords such as 'cap rate california', 'mls real estate api tools', and 'is the housing market going to crash', DealCheck can capture high-intent users, bridge competitor gaps, and drive substantial conversions for real estate investment software.",
   "top_keyword_opportunities": [
+    {
+      "keyword": "cap rate california",
+      "search_volume": 5400,
+      "keyword_difficulty": 12,
+      "cpc": 0.81,
+      "intent": "Informational",
+      "strategic_value": "Extremely low difficulty (12) for a massive search volume (5,400) with localized investor intent."
+    },
+    {
+      "keyword": "mls real estate api tools niche saas opportunity",
+      "search_volume": 4400,
+      "keyword_difficulty": 13,
+      "cpc": 0.0,
+      "intent": "Informational",
+      "strategic_value": "Highly relevant to software buyers and developers looking for real estate data tools, matching DealCheck's SaaS product offering."
+    },
+    {
+      "keyword": "is the housing market going to crash",
+      "search_volume": 6600,
+      "keyword_difficulty": 35,
+      "cpc": 1.3,
+      "intent": "Informational",
+      "strategic_value": "Massive search volume with moderate difficulty. Captures top-of-funnel investors looking for guidance before making buying decisions."
+    },
+    {
+      "keyword": "cap rate formula",
+      "search_volume": 4400,
+      "keyword_difficulty": 41,
+      "cpc": 0.19,
+      "intent": "Informational",
+      "strategic_value": "Directly targets calculation intent, allowing us to funnel users from learning the formula straight to using DealCheck's calculator."
+    },
     {
       "keyword": "real estate investment software",
       "search_volume": 1900,
       "keyword_difficulty": 39,
       "cpc": 12.96,
-      "intent": "commercial, informational",
-      "strategic_value": "Highest commercial intent with a strong CPC of $12.96. Ranking here captures active buyers looking for tools like DealCheck."
-    },
-    {
-      "keyword": "how to quickly screen real estate deals criteria",
-      "search_volume": 1900,
-      "keyword_difficulty": 17,
-      "cpc": 0.0,
-      "intent": "informational",
-      "strategic_value": "Low difficulty (17) with proven existing rankings. Perfect low-hanging fruit to capture investors early in their property evaluation workflow."
-    },
-    {
-      "keyword": "irr equation",
-      "search_volume": 3600,
-      "keyword_difficulty": 34,
-      "cpc": 0.29,
-      "intent": "informational",
-      "strategic_value": "High search volume and already ranking well (Position 1). Capitalize on this traffic by offering embedded calculators and software tools."
-    },
-    {
-      "keyword": "dscr ratio formula",
-      "search_volume": 1300,
-      "keyword_difficulty": 31,
-      "cpc": 1.08,
-      "intent": "informational",
-      "strategic_value": "Essential metric for real estate investors using commercial loans. Captures high-intent property investors analyzing multi-family or commercial assets."
+      "intent": "Commercial, Informational",
+      "strategic_value": "High commercial intent and expensive CPC ($12.96). Improving current rankings from #8 to the top 3 will drive direct product trials."
     }
   ],
   "suggested_landing_pages": [
     {
-      "title": "Best Real Estate Investment Analysis Software",
-      "slug": "real-estate-investment-software",
-      "target_keyword": "real estate investment software",
-      "main_cta": "Start Free Deal Analysis Trial",
+      "title": "California Real Estate Cap Rate Calculator & Guide",
+      "slug": "/calculators/cap-rate-california",
+      "target_keyword": "cap rate california",
+      "main_cta": "Analyze a California Property Free",
       "suggested_structure": [
-        "Hero section with software UI screenshot and direct free trial CTA",
-        "Key features breakdown (comps, financial projections, PDF reports)",
-        "Comparison table against traditional spreadsheets and legacy software",
-        "Interactive ROI calculator widget",
-        "Customer testimonials and case studies",
-        "Final FAQ and conversion footer"
+        "Introduction to California Market Cap Rates",
+        "Interactive California Cap Rate Calculator",
+        "Average Cap Rates by Major CA Metro Areas (Los Angeles, SF, San Diego)",
+        "Factors Impacting CA Investment Yields",
+        "CTA to DealCheck Software"
       ]
     },
     {
-      "title": "Real Estate Deal Screening Criteria Checklist & Tool",
-      "slug": "how-to-screen-real-estate-deals",
-      "target_keyword": "how to quickly screen real estate deals criteria",
-      "main_cta": "Download Deal Screening Template & Free Software Access",
+      "title": "Real Estate API & Data Integration Tools for Developers",
+      "slug": "/tools/real-estate-api-tools",
+      "target_keyword": "mls real estate api tools niche saas opportunity",
+      "main_cta": "Explore DealCheck API Documentation",
       "suggested_structure": [
-        "Introduction to rapid deal screening frameworks",
-        "The 5 core metrics every investor must check (Cap Rate, NOI, Cash-on-Cash, DSCR, IRR)",
-        "Downloadable Excel/Google Sheets underwriting template",
-        "How to automate deal screening using modern software",
-        "Call to action to test properties instantly"
+        "Overview of Property Data and MLS APIs",
+        "Key Features to Look for in Real Estate APIs",
+        "Use Cases for Niche PropTech SaaS",
+        "How DealCheck Powers Real Estate Data",
+        "Request API Access"
       ]
     }
   ],
   "suggested_blog_topics": [
     {
-      "title": "Mastering the IRR Equation: How to Calculate Internal Rate of Return for Real Estate",
-      "target_keyword": "irr equation",
-      "primary_intent": "informational",
+      "title": "Is the Housing Market Going to Crash? 2024-2025 Analysis for Investors",
+      "target_keyword": "is the housing market going to crash",
+      "primary_intent": "Informational",
       "key_talking_points": [
-        "Definition of Internal Rate of Return (IRR) in property investing",
-        "Step-by-step breakdown of the IRR mathematical formula",
-        "Why IRR matters more than simple cash-on-cash return for long-term holds",
-        "How software automates complex cash flow projections"
+        "Current macroeconomic indicators vs. 2008",
+        "Inventory levels and interest rate impacts",
+        "Regional variations in housing corrections",
+        "Actionable strategies for real estate investors in shifting markets"
       ],
-      "lead_magnet": "Free Real Estate Investment Calculator & IRR Model"
+      "lead_magnet": "Free Market Crash Preparedness Checklist for Investors"
     },
     {
-      "title": "How to Calculate DSCR: The Ultimate Guide for Real Estate Investors",
-      "target_keyword": "dscr ratio formula",
-      "primary_intent": "informational",
+      "title": "The Ultimate Cap Rate Formula Guide: How to Calculate & What is Good",
+      "target_keyword": "cap rate formula",
+      "primary_intent": "Informational",
       "key_talking_points": [
-        "What is Debt Service Coverage Ratio (DSCR) and why lenders care",
-        "The standard DSCR formula (Net Operating Income / Total Debt Service)",
-        "What constitutes a 'good' DSCR for residential and commercial loans",
-        "Strategies to improve property DSCR before applying for financing"
+        "Step-by-step breakdown of Net Operating Income (NOI)",
+        "The standard cap rate equation with examples",
+        "Limitations of cap rates and when to use IRR or Cash-on-Cash",
+        "How automated calculators save time"
       ],
-      "lead_magnet": "DSCR & Commercial Loan Calculator Template"
+      "lead_magnet": "Free Real Estate Deal Analysis Spreadsheet Template"
     }
   ]
 }
