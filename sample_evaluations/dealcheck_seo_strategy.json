@@ -1,64 +1,64 @@
 {
-  "executive_summary": "The organic landscape reveals high-value gaps in real estate analysis, valuation, and software terms. While DealCheck dominates core financial metrics like IRR and deal screening, it misses massive informational volume around cap rates and property valuations where HouseCanary ranks. Conversely, Bricked.ai captures niche AI and house flipping search intent. By targeting high-intent, low-difficulty keywords (e.g., 'cap rate california', 'real estate comp software'), deploying targeted landing pages and high-value blog posts, and executing outreach leveraging high-authority links like rentcast.io and realwealth.com, we can capture high-converting organic traffic.",
+  "executive_summary": "Analysis of competitors DealCheck, Bricked.ai, and HouseCanary reveals substantial untapped organic search volume in foundational real estate valuation and high-intent software comparison terms. While DealCheck dominates core analytical calculations (IRR, deal screening) and HouseCanary leads in valuation and local market insights, there is a clear keyword gap for terms like 'what is a cap rate' (110k volume) and high-converting software alternative terms ('propstream alternatives', 'real estate flipping software'). By building dedicated pillar content around cap rates, valuation metrics, and high-tier comparison pages, combined with strategic backlinking from high-authority partners like RentCast and BiggerPockets, we can rapidly capture high-intent organic traffic.",
   "top_keyword_opportunities": [
-    {
-      "keyword": "cap rate california",
-      "search_volume": 5400,
-      "keyword_difficulty": 12,
-      "cpc": 0.81,
-      "intent": "Informational/Commercial",
-      "strategic_value": "Exceptional low-difficulty, high-volume regional cap rate term with solid CPC, completely missed by DealCheck."
-    },
-    {
-      "keyword": "real estate comp software",
-      "search_volume": 30,
-      "keyword_difficulty": 20,
-      "cpc": 9.49,
-      "intent": "Commercial",
-      "strategic_value": "Extremely high commercial intent ($9.49 CPC) targeting active real estate investors looking for comparable tools."
-    },
-    {
-      "keyword": "best house flipping software",
-      "search_volume": 170,
-      "keyword_difficulty": 15,
-      "cpc": 4.26,
-      "intent": "Commercial",
-      "strategic_value": "Captures high-intent software shoppers currently evaluating tools like Bricked and DealCheck."
-    },
     {
       "keyword": "what is a cap rate",
       "search_volume": 110000,
       "keyword_difficulty": 52,
       "cpc": 0.13,
       "intent": "Informational",
-      "strategic_value": "Massive search volume gateway term for real estate underwriting and property analysis software."
+      "strategic_value": "Massive search volume with moderate difficulty. Ranking here establishes immediate top-of-funnel authority for commercial and residential real estate investors."
+    },
+    {
+      "keyword": "arv calculator",
+      "search_volume": 1300,
+      "keyword_difficulty": 7,
+      "cpc": 2.36,
+      "intent": "Commercial / Transactional",
+      "strategic_value": "Extremely low difficulty with high commercial intent. Captures house flippers actively looking for digital tools."
+    },
+    {
+      "keyword": "propstream alternative",
+      "search_volume": 260,
+      "keyword_difficulty": 15,
+      "cpc": 8.49,
+      "intent": "Commercial",
+      "strategic_value": "High CPC indicating extreme buyer intent. Perfect for capturing competitor traffic looking for cost-effective or AI-driven alternatives."
+    },
+    {
+      "keyword": "real estate investment software",
+      "search_volume": 1900,
+      "keyword_difficulty": 39,
+      "cpc": 12.96,
+      "intent": "Commercial",
+      "strategic_value": "Top-tier SaaS conversion keyword with a lucrative CPC. Essential for capturing software-evaluating leads."
     }
   ],
   "suggested_landing_pages": [
     {
-      "title": "Best Real Estate Comp Software & Property Analyzer",
-      "slug": "real-estate-comp-software",
-      "target_keyword": "real estate comp software",
-      "main_cta": "Start Free Property Analysis",
+      "title": "Best PropStream Alternatives for Real Estate Investors in 2026",
+      "slug": "propstream-alternatives",
+      "target_keyword": "propstream alternatives",
+      "main_cta": "Start Free Deal Analysis Trial",
       "suggested_structure": [
-        "Hero section with dynamic property valuation demo",
-        "Comparison table of top comp software features",
-        "Interactive ROI and deal screening calculator preview",
-        "User testimonials from active flippers and investors",
-        "FAQ addressing comp accuracy and MLS data integrations"
+        "Introduction: Why investors are seeking PropStream alternatives",
+        "Comparison Table: Features, Pricing, and Data Accuracy",
+        "Deep Dive into Top 3 Tools",
+        "Feature-by-Feature Breakdown",
+        "Final Verdict and Recommendations"
       ]
     },
     {
-      "title": "California Cap Rate Calculator & Market Report",
-      "slug": "cap-rate-california",
-      "target_keyword": "cap rate california",
-      "main_cta": "Calculate Your CA Deal Now",
+      "title": "Free ARV Calculator: Calculate After Repair Value Instantly",
+      "slug": "arv-calculator",
+      "target_keyword": "arv calculator",
+      "main_cta": "Calculate Your Property ARV Now",
       "suggested_structure": [
-        "Statewide California cap rate overview by metro",
-        "Free embedded cap rate calculation tool",
-        "Step-by-step guide to finding NOI in high-cost markets",
-        "Downloadable California investment property underwriting checklist",
-        "Call to action to test deals instantly"
+        "Interactive ARV Calculator Widget",
+        "What is ARV and Why It Matters for Flippers",
+        "How to Calculate After Repair Value Step-by-Step",
+        "Real-World ARV Case Study",
+        "Frequently Asked Questions"
       ]
     }
   ],
@@ -68,44 +68,38 @@
       "target_keyword": "what is a cap rate",
       "primary_intent": "Informational",
       "key_talking_points": [
-        "Definition of Capitalization Rate and formula breakdown",
-        "Difference between good cap rates and bad cap rates by market",
-        "How property appreciation and leverage impact cap rate realities",
-        "Using software to automate cap rate calculations"
+        "Definition of Capitalization Rate and how it's calculated",
+        "What constitutes a 'good' cap rate by market",
+        "Cap rate vs. ROI vs. Cash-on-Cash Return",
+        "Limitations of relying solely on cap rates"
       ],
-      "lead_magnet": "Free Rental Property Underwriting Spreadsheet & Cap Rate Calculator"
+      "lead_magnet": "Free Rental Property Analyzer Spreadsheet"
     },
     {
-      "title": "How to Find Accurate Real Estate Comps Without the MLS",
-      "target_keyword": "real estate comp software",
-      "primary_intent": "Commercial/Informational",
+      "title": "How to Quickly Screen Real Estate Deals Using Proven Criteria",
+      "target_keyword": "how to quickly screen real estate deals criteria",
+      "primary_intent": "Informational / Commercial",
       "key_talking_points": [
-        "Challenges of pulling accurate comparable sales independently",
-        "Key data points to look for (square footage, age, condition, DOM)",
-        "How automated valuation models (AVMs) and AI speed up analysis",
-        "Review of top tools for real estate comps and deal screening"
+        "The 5-minute property screening framework",
+        "The 1% and 70% rules explained",
+        "Red flags to watch out for during initial review",
+        "Automating deal screening with software"
       ],
-      "lead_magnet": "The Ultimate Real Estate Comps Checklist & Guide"
+      "lead_magnet": "Deal Screening Checklist PDF"
     }
   ],
   "suggested_backlink_campaigns": [
     {
       "domain": "rentcast.io",
       "authority_score": 70,
-      "strategic_angle": "Data integration partnership or co-marketing piece on automated valuation models (AVMs) and rental data accuracy.",
-      "anchor_text_suggestion": "real estate analysis software"
+      "strategic_angle": "API integration partnership and data-sharing guest contributions showcasing combined automated valuation models.",
+      "anchor_text_suggestion": "Advanced Real Estate Analytics Tool"
     },
     {
-      "domain": "realwealth.com",
-      "authority_score": 42,
-      "strategic_angle": "Guest contributor guide focusing on scaling single-family and multi-family investment portfolios using modern digital calculators.",
-      "anchor_text_suggestion": "DealCheck investment calculator"
-    },
-    {
-      "domain": "completeaitraining.com",
-      "authority_score": 6,
-      "strategic_angle": "Case study submission on how artificial intelligence and modern algorithms are disrupting real estate deal analysis.",
-      "anchor_text_suggestion": "AI real estate software"
+      "domain": "biggerpockets.com",
+      "authority_score": 75,
+      "strategic_angle": "Contribute expert guides on underwriting fix-and-flip properties and embed interactive calculators.",
+      "anchor_text_suggestion": "real estate investment software"
     }
   ]
 }
