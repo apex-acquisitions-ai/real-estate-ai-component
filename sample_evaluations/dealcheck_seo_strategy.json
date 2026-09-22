@@ -1,5 +1,5 @@
 {
-  "executive_summary": "Analysis of competitors DealCheck, Bricked.ai, and HouseCanary reveals substantial untapped organic search volume in foundational real estate valuation and high-intent software comparison terms. While DealCheck dominates core analytical calculations (IRR, deal screening) and HouseCanary leads in valuation and local market insights, there is a clear keyword gap for terms like 'what is a cap rate' (110k volume) and high-converting software alternative terms ('propstream alternatives', 'real estate flipping software'). By building dedicated pillar content around cap rates, valuation metrics, and high-tier comparison pages, combined with strategic backlinking from high-authority partners like RentCast and BiggerPockets, we can rapidly capture high-intent organic traffic.",
+  "executive_summary": "An analysis of organic metrics, keyword gaps, and backlink profiles across DealCheck, Bricked.ai, and HouseCanary reveals substantial whitespace in high-intent commercial real estate software and valuation terms. DealCheck dominates transaction analysis terms (like IRR equations and deal screening) while HouseCanary captures high-volume market and valuation data. Bricked.ai targets niche AI and flipping tools. The core growth opportunity lies in capturing mid-difficulty, high-intent queries such as 'real estate flipping software', 'comparative market analysis tool', and core financial metric definitions like 'what is a cap rate', supported by a strong contextual backlink acquisition campaign leveraging high-authority real estate and proptech ecosystems.",
   "top_keyword_opportunities": [
     {
       "keyword": "what is a cap rate",
@@ -7,99 +7,105 @@
       "keyword_difficulty": 52,
       "cpc": 0.13,
       "intent": "Informational",
-      "strategic_value": "Massive search volume with moderate difficulty. Ranking here establishes immediate top-of-funnel authority for commercial and residential real estate investors."
+      "strategic_value": "Massive search volume with low competition relative to traffic; ideal top-of-funnel capture for investors looking to evaluate income properties."
+    },
+    {
+      "keyword": "real estate flipping software",
+      "search_volume": 320,
+      "keyword_difficulty": 10,
+      "cpc": 7.51,
+      "intent": "Commercial",
+      "strategic_value": "Extremely high commercial intent and strong CPC with low keyword difficulty, allowing rapid conversion potential for house flippers."
+    },
+    {
+      "keyword": "comparative market analysis tool",
+      "search_volume": 2400,
+      "keyword_difficulty": 22,
+      "cpc": 5.27,
+      "intent": "Commercial",
+      "strategic_value": "Bridges valuation data tools and deal analysis software, capturing users actively seeking automated comp features."
     },
     {
       "keyword": "arv calculator",
       "search_volume": 1300,
       "keyword_difficulty": 7,
       "cpc": 2.36,
-      "intent": "Commercial / Transactional",
-      "strategic_value": "Extremely low difficulty with high commercial intent. Captures house flippers actively looking for digital tools."
-    },
-    {
-      "keyword": "propstream alternative",
-      "search_volume": 260,
-      "keyword_difficulty": 15,
-      "cpc": 8.49,
-      "intent": "Commercial",
-      "strategic_value": "High CPC indicating extreme buyer intent. Perfect for capturing competitor traffic looking for cost-effective or AI-driven alternatives."
-    },
-    {
-      "keyword": "real estate investment software",
-      "search_volume": 1900,
-      "keyword_difficulty": 39,
-      "cpc": 12.96,
-      "intent": "Commercial",
-      "strategic_value": "Top-tier SaaS conversion keyword with a lucrative CPC. Essential for capturing software-evaluating leads."
+      "intent": "Transactional",
+      "strategic_value": "Very low difficulty term with strong investor intent, perfect for driving direct software sign-ups through interactive tools."
     }
   ],
   "suggested_landing_pages": [
     {
-      "title": "Best PropStream Alternatives for Real Estate Investors in 2026",
-      "slug": "propstream-alternatives",
-      "target_keyword": "propstream alternatives",
-      "main_cta": "Start Free Deal Analysis Trial",
+      "title": "Best Real Estate Flipping Software & Deal Analyzer",
+      "slug": "real-estate-flipping-software",
+      "target_keyword": "real estate flipping software",
+      "main_cta": "Start Free Trial",
       "suggested_structure": [
-        "Introduction: Why investors are seeking PropStream alternatives",
-        "Comparison Table: Features, Pricing, and Data Accuracy",
-        "Deep Dive into Top 3 Tools",
-        "Feature-by-Feature Breakdown",
-        "Final Verdict and Recommendations"
+        "Hero section with software preview and value proposition",
+        "Key features for house flippers (ARV calculation, rehab budget estimates)",
+        "Comparison table against competitors like PropStream and Bricked",
+        "Interactive ROI calculator teaser",
+        "Customer testimonials and case studies"
       ]
     },
     {
-      "title": "Free ARV Calculator: Calculate After Repair Value Instantly",
-      "slug": "arv-calculator",
-      "target_keyword": "arv calculator",
-      "main_cta": "Calculate Your Property ARV Now",
+      "title": "Automated Comparative Market Analysis (CMA) Tool",
+      "slug": "comparative-market-analysis-tool",
+      "target_keyword": "comparative market analysis tool",
+      "main_cta": "Generate Free CMA Report",
       "suggested_structure": [
-        "Interactive ARV Calculator Widget",
-        "What is ARV and Why It Matters for Flippers",
-        "How to Calculate After Repair Value Step-by-Step",
-        "Real-World ARV Case Study",
-        "Frequently Asked Questions"
+        "Introduction to automated comp generation",
+        "How our AVM compares properties in seconds",
+        "Step-by-step guide to pulling real estate comps",
+        "Sample property report download",
+        "Frequently asked questions"
       ]
     }
   ],
   "suggested_blog_topics": [
     {
-      "title": "What is a Cap Rate? The Ultimate Guide for Real Estate Investors",
+      "title": "What Is a Cap Rate? The Ultimate Guide for Real Estate Investors",
       "target_keyword": "what is a cap rate",
       "primary_intent": "Informational",
       "key_talking_points": [
-        "Definition of Capitalization Rate and how it's calculated",
-        "What constitutes a 'good' cap rate by market",
-        "Cap rate vs. ROI vs. Cash-on-Cash Return",
-        "Limitations of relying solely on cap rates"
+        "Definition and basic mathematical formula of capitalization rate",
+        "What constitutes a good cap rate by market and asset class",
+        "Limitations of cap rates and when to use IRR or cash-on-cash return instead",
+        "How to use deal analysis software to instantly compute cap rates"
       ],
-      "lead_magnet": "Free Rental Property Analyzer Spreadsheet"
+      "lead_magnet": "Free Real Estate Investment Calculator & Cap Rate Spreadsheet"
     },
     {
-      "title": "How to Quickly Screen Real Estate Deals Using Proven Criteria",
-      "target_keyword": "how to quickly screen real estate deals criteria",
-      "primary_intent": "Informational / Commercial",
+      "title": "How to Calculate After Repair Value (ARV): Formulas and Tools",
+      "target_keyword": "arv calculator",
+      "primary_intent": "Commercial",
       "key_talking_points": [
-        "The 5-minute property screening framework",
-        "The 1% and 70% rules explained",
-        "Red flags to watch out for during initial review",
-        "Automating deal screening with software"
+        "Understanding the 70% rule in house flipping",
+        "Step-by-step process for selecting comparable properties",
+        "Adjusting for condition, square footage, and market trends",
+        "Leveraging AI and automated tools for instant ARV estimates"
       ],
-      "lead_magnet": "Deal Screening Checklist PDF"
+      "lead_magnet": "Free ARV & Rehab Cost Estimator Template"
     }
   ],
   "suggested_backlink_campaigns": [
     {
       "domain": "rentcast.io",
       "authority_score": 70,
-      "strategic_angle": "API integration partnership and data-sharing guest contributions showcasing combined automated valuation models.",
-      "anchor_text_suggestion": "Advanced Real Estate Analytics Tool"
+      "strategic_angle": "Propose an API or data integration partnership, featuring reciprocal resource linking for real estate data enrichment.",
+      "anchor_text_suggestion": "real estate analysis software"
     },
     {
-      "domain": "biggerpockets.com",
-      "authority_score": 75,
-      "strategic_angle": "Contribute expert guides on underwriting fix-and-flip properties and embed interactive calculators.",
-      "anchor_text_suggestion": "real estate investment software"
+      "domain": "w2capitalist.com",
+      "authority_score": 51,
+      "strategic_angle": "Guest contribution or software review highlighting portfolio scaling strategies for part-time investors.",
+      "anchor_text_suggestion": "underwrite investment properties"
+    },
+    {
+      "domain": "realwealth.com",
+      "authority_score": 42,
+      "strategic_angle": "Contribute expert commentary on turnkey property analysis and market evaluation trends.",
+      "anchor_text_suggestion": "deal analysis tools"
     }
   ]
 }

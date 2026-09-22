@@ -41,7 +41,11 @@ top_br_gaps = sorted(r_csv("data/7_bricked_keyword_gap.csv", lambda r: {
     "cpc": float(r.get("CPC") or 0.0), "rankings": f"bricked: #{r.get('bricked.ai')}, dealcheck: #{r.get('dealcheck.io')}, housecanary: #{r.get('housecanary.com')}"
 } if r["Keyword"] else None), key=lambda x: x["search_volume"], reverse=True)[:10]
 
-seen = set()
+top_hc_gaps = sorted(r_csv("data/10_housecanary_keyword_gap.csv", lambda r: {
+    "keyword": r["Keyword"], "search_volume": int(r.get("Volume") or 0), "keyword_difficulty": int(r.get("Keyword Difficulty") or 0),
+    "cpc": float(r.get("CPC") or 0.0), "rankings": f"housecanary: #{r.get('housecanary.com')}, bricked: #{r.get('bricked.ai')}, dealcheck: #{r.get('dealcheck.io')}"
+} if r["Keyword"] else None), key=lambda x: x["search_volume"], reverse=True)[:10]
+
 def parse_backlink(r, s):
     url = r["Source url"]
     m = re.search(r'https?://(?:www\.)?([^/]+)', url)
@@ -55,17 +59,17 @@ s_dc, s_br = set(), set()
 top_dc_bl = sorted(r_csv("data/3_backlink_analytics_referrals.csv", lambda r: parse_backlink(r, s_dc)), key=lambda x: x["authority_score"], reverse=True)[:10]
 top_br_bl = sorted(r_csv("data/8_bricked_backlink_analytics.csv", lambda r: parse_backlink(r, s_br)), key=lambda x: x["authority_score"], reverse=True)[:10]
 
-combined_dataset = {
-    "dc_strengths": top_dc, "br_strengths": top_br, "hc_strengths": top_hc, "dc_gaps": top_gaps, "br_gaps": top_br_gaps, "dc_backlinks": top_dc_bl, "br_backlinks": top_br_bl
+data_set = {
+    "dc_s": top_dc, "br_s": top_br, "hc_s": top_hc, "dc_g": top_gaps, "br_g": top_br_gaps, "hc_g": top_hc_gaps, "dc_b": top_dc_bl, "br_b": top_br_bl
 }
 print("Data parsed successfully.")
 
-system_prompt = "You are an Real Estate SEO Strategist. Analyze competitor keywords, gaps, and backlinks (DealCheck, Bricked.ai, HouseCanary), and build an SEO roadmap. Respond ONLY with valid JSON matching the schema."
+system_prompt = "You are an Real Estate SEO Strategist. Analyze competitor keywords, gaps, and backlinks (DealCheck, Bricked.ai, HouseCanary) and build a roadmap. Respond ONLY with valid JSON."
 
 try:
     response = client.beta.chat.completions.parse(
         model="models/gemini-3.5-flash-lite",
-        messages=[{"role": "system", "content": system_prompt},{"role": "user", "content": "Analyze metrics, gaps, and backlinks:\n" + json.dumps(combined_dataset, indent=2)}],
+        messages=[{"role": "system", "content": system_prompt},{"role": "user", "content": "Analyze organic metrics, competitor gaps, and backlinks:\n" + json.dumps(data_set, indent=2)}],
         response_format=SEOStrategyResponse,
         temperature=0.2
     )
@@ -74,12 +78,13 @@ try:
     out_path = "sample_evaluations/dealcheck_seo_strategy.json"
     with open(out_path, "w", encoding="utf-8") as out_f:
         json.dump(result, out_f, indent=2)
-    print(f"--- SUCCESS! Saved JSON: {out_path} ---\n\nExecutive Summary:\n", result["executive_summary"])
+    print("JSON saved:", out_path)
+    print("Executive Summary:\n", result["executive_summary"])
     print("\n[Top Opportunities]")
     for kw in result["top_keyword_opportunities"][:5]:
-         print(f"  - '{kw['keyword']}' (Vol: {kw['search_volume']}, KD: {kw['keyword_difficulty']})")
+         print(f"- '{kw['keyword']}' (Vol: {kw['search_volume']}, KD: {kw['keyword_difficulty']})")
     print("\n[Suggested Backlink Campaigns]")
     for bc in result["suggested_backlink_campaigns"][:3]:
-         print(f"  - Domain: '{bc['domain']}' (Authority: {bc['authority_score']})\n    Angle: {bc['strategic_angle']}\n    Anchor: '{bc['anchor_text_suggestion']}'")
+         print(f"- Domain: '{bc['domain']}' (DA: {bc['authority_score']})\n  Angle: {bc['strategic_angle']}\n  Anchor: '{bc['anchor_text_suggestion']}'")
 except Exception as e:
     print(f"Error during API call: {e}")
