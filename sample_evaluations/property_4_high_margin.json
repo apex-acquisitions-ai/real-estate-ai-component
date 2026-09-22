@@ -1,0 +1,26 @@
+{
+  "status": "SUCCESS",
+  "property_summary": {
+    "address": "101 Peachtree St, Atlanta, GA 30303",
+    "sqft": 1200,
+    "asking_price": 90000.0,
+    "estimated_arv": 210000.0
+  },
+  "underwriting_metrics": {
+    "rehab_tier": "Standard",
+    "rehab_cost_per_sqft": 40.0,
+    "total_estimated_rehab": 48000.0,
+    "target_wholesale_fee": 10000.0,
+    "max_allowable_offer_mao": 89000.0,
+    "deal_spread": -1000.0,
+    "is_viable_deal": false
+  },
+  "outreach_assets": {
+    "suggested_opening_offer": 89000.0,
+    "seller_sms_script": "Hi, I reviewed the details for 101 Peachtree St and given the updates needed, we can offer a fast, all-cash transaction at $89,000 with zero hassle. Let me know if you are open to reviewing this offer today.",
+    "seller_email_script": "Hello, thank you for sharing the information regarding the property at 101 Peachtree St. Based on the estimated rehab costs and current market values, we can structure a clean, as-is cash purchase at $89,000 to help you close quickly."
+  },
+  "audit_flags": [
+    "Asking price exceeds Maximum Allowable Offer by $1,000."
+  ]
+}

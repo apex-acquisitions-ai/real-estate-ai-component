@@ -1,0 +1,27 @@
+{
+  "status": "INCOMPLETE_DATA",
+  "property_summary": {
+    "address": "999 Unknown Way, Houston, TX 77001",
+    "sqft": 0,
+    "asking_price": 150000.0,
+    "estimated_arv": 0.0
+  },
+  "underwriting_metrics": {
+    "rehab_tier": "Standard",
+    "rehab_cost_per_sqft": 0.0,
+    "total_estimated_rehab": 0.0,
+    "target_wholesale_fee": 10000.0,
+    "max_allowable_offer_mao": 0.0,
+    "deal_spread": 0.0,
+    "is_viable_deal": false
+  },
+  "outreach_assets": {
+    "suggested_opening_offer": 0.0,
+    "seller_sms_script": "Hi, I am following up regarding your property at 999 Unknown Way to gather a few more details so we can put together a fair cash offer. When would be a good time to connect?",
+    "seller_email_script": "Hi, I am looking into the estate property at 999 Unknown Way and need to confirm some basic details like square footage and current condition to finalize our pricing. Please let me know when you have a few minutes to chat."
+  },
+  "audit_flags": [
+    "Missing Square Footage",
+    "Missing Target ARV"
+  ]
+}

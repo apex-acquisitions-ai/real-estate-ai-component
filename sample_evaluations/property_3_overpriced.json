@@ -1,0 +1,26 @@
+{
+  "status": "SUCCESS",
+  "property_summary": {
+    "address": "555 Sunshine Blvd, Tampa, FL 33606",
+    "sqft": 1600,
+    "asking_price": 320000.0,
+    "estimated_arv": 380000.0
+  },
+  "underwriting_metrics": {
+    "rehab_tier": "Standard",
+    "rehab_cost_per_sqft": 40.0,
+    "total_estimated_rehab": 64000.0,
+    "target_wholesale_fee": 10000.0,
+    "max_allowable_offer_mao": 192000.0,
+    "deal_spread": -128000.0,
+    "is_viable_deal": false
+  },
+  "outreach_assets": {
+    "suggested_opening_offer": 190000.0,
+    "seller_sms_script": "Hi, I saw your property on 555 Sunshine Blvd and wanted to see if you would consider a cash offer around our projected numbers after factoring in the updates needed.",
+    "seller_email_script": "Hello, following up regarding your home at 555 Sunshine Blvd. Based on the repairs required for the kitchen, baths, and exterior, we can offer a straightforward, all-cash transaction with zero agent fees or closing costs."
+  },
+  "audit_flags": [
+    "Asking price significantly exceeds MAO by $128,000"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "SUCCESS",
+  "property_summary": {
+    "address": "4321 Oak Ave, Orlando, FL 32801",
+    "sqft": 1400,
+    "asking_price": 180000.0,
+    "estimated_arv": 310000.0
+  },
+  "underwriting_metrics": {
+    "rehab_tier": "Cosmetic",
+    "rehab_cost_per_sqft": 20.0,
+    "total_estimated_rehab": 28000.0,
+    "target_wholesale_fee": 10000.0,
+    "max_allowable_offer_mao": 179000.0,
+    "deal_spread": -1000.0,
+    "is_viable_deal": false
+  },
+  "outreach_assets": {
+    "suggested_opening_offer": 175000.0,
+    "seller_sms_script": "Hi, I'm following up on your property at 4321 Oak Ave to see if you're open to a cash offer around $175k with a quick, hassle-free close. Let me know if you have a few minutes to chat today.",
+    "seller_email_script": "Hello, I recently reviewed the details for your home at 4321 Oak Ave, Orlando, FL and would love to discuss a straightforward cash offer that accommodates your timeline. Please let me know when might be a good time for a quick conversation regarding the property."
+  },
+  "audit_flags": [
+    "Asking price is slightly above the calculated MAO based on standard 70% rule."
+  ]
+}

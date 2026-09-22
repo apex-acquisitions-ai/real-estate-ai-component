@@ -1,0 +1,26 @@
+{
+  "status": "SUCCESS",
+  "property_summary": {
+    "address": "789 Pine Rd, Detroit, MI 48201",
+    "sqft": 2200,
+    "asking_price": 45000.0,
+    "estimated_arv": 240000.0
+  },
+  "underwriting_metrics": {
+    "rehab_tier": "Full Gut",
+    "rehab_cost_per_sqft": 80.0,
+    "total_estimated_rehab": 176000.0,
+    "target_wholesale_fee": 15000.0,
+    "max_allowable_offer_mao": -23000.0,
+    "deal_spread": -68000.0,
+    "is_viable_deal": false
+  },
+  "outreach_assets": {
+    "suggested_opening_offer": 20000.0,
+    "seller_sms_script": "Hi, I'm following up regarding your property at 789 Pine Rd to see if you're still open to a cash offer to take it off your hands as-is. Let me know what price makes sense for you.",
+    "seller_email_script": "Hello, I was reviewing your property at 789 Pine Rd and wanted to check in about purchasing it in its current condition with a fast, all-cash closing. Please let me know the best number to reach you to discuss a fair offer."
+  },
+  "audit_flags": [
+    "Negative MAO and deal spread due to heavy structural damage and high rehab costs exceeding ARV formulas."
+  ]
+}
