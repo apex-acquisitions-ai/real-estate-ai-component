@@ -9,73 +9,58 @@ client = OpenAI(
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
-org_kws = []
-with open("data/5_dealcheck_organic_positions.csv", "r", encoding="utf-8") as f:
-    for r in csv.DictReader(f):
-        try:
-            kw = r.get("Keyword", "")
-            if kw and "dealcheck" not in kw.lower():
-                org_kws.append({
-                    "keyword": kw, "position": int(r.get("Position", 100) or 100),
-                    "search_volume": int(r.get("Search Volume", 0) or 0),
-                    "keyword_difficulty": int(r.get("Keyword Difficulty", 0) or 0),
-                    "cpc": float(r.get("CPC", 0.0) or 0.0), "intent": r.get("Keyword Intents", "")
-                })
-        except Exception: continue
-org_kws.sort(key=lambda x: x["search_volume"], reverse=True)
-top_org = org_kws[:15]
+def read_csv(path, filter_fn):
+    items = []
+    with open(path, "r", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            try:
+                item = filter_fn(r)
+                if item: items.append(item)
+            except Exception: continue
+    return items
 
-gap_kws = []
-with open("data/2_keyword_gap_competitors.csv", "r", encoding="utf-8") as f:
-    for r in csv.DictReader(f):
-        try:
-            kw = r.get("Keyword", "")
-            dc, hc, br = r.get("dealcheck.io", "0") or "0", r.get("housecanary.com", "0") or "0", r.get("bricked.ai", "0") or "0"
-            is_dc = (dc == "0" or (dc.isdigit() and int(dc) > 50))
-            is_co = ((hc.isdigit() and 1 <= int(hc) <= 40) or (br.isdigit() and 1 <= int(br) <= 40))
-            if is_dc and is_co and kw and "dealcheck" not in kw.lower():
-                comps = []
-                if hc.isdigit() and int(hc) > 0: comps.append(f"housecanary: #{hc}")
-                if br.isdigit() and int(br) > 0: comps.append(f"bricked: #{br}")
-                gap_kws.append({
-                    "keyword": kw, "search_volume": int(r.get("Volume", 0) or 0),
-                    "keyword_difficulty": int(r.get("Keyword Difficulty", 0) or 0),
-                    "cpc": float(r.get("CPC", 0.0) or 0.0), "intent": r.get("Intents", ""), "competitor_rankings": ", ".join(comps)
-                })
-        except Exception: continue
-gap_kws.sort(key=lambda x: x["search_volume"], reverse=True)
-top_gaps = gap_kws[:15]
+# 1. Parse DealCheck
+top_dc = sorted(read_csv("data/5_dealcheck_organic_positions.csv", lambda r: {
+    "keyword": r["Keyword"], "position": int(r["Position"] or 100), "search_volume": int(r["Search Volume"] or 0),
+    "keyword_difficulty": int(r["Keyword Difficulty"] or 0), "cpc": float(r["CPC"] or 0.0), "intent": r["Keyword Intents"]
+} if r["Keyword"] and "dealcheck" not in r["Keyword"].lower() else None), key=lambda x: x["search_volume"], reverse=True)[:10]
 
-backlinks = []
+# 2. Parse Bricked
+top_br = sorted(read_csv("data/6_bricked_organic_positions.csv", lambda r: {
+    "keyword": r["Keyword"], "position": int(r["Position"] or 100), "search_volume": int(r["Search Volume"] or 0),
+    "keyword_difficulty": int(r["Keyword Difficulty"] or 0), "cpc": float(r["CPC"] or 0.0), "intent": r["Keyword Intents"]
+} if r["Keyword"] and int(r["Position"] or 100) <= 20 and not any(b in r["Keyword"].lower() for b in ["bricked", "brikd", "brico", "brickanta", "broke ai"]) else None), key=lambda x: x["search_volume"], reverse=True)[:10]
+
+# 3. Parse Gaps
+top_gaps = sorted(read_csv("data/2_keyword_gap_competitors.csv", lambda r: {
+    "keyword": r["Keyword"], "search_volume": int(r.get("Volume") or 0), "keyword_difficulty": int(r.get("Keyword Difficulty") or 0),
+    "cpc": float(r.get("CPC") or 0.0), "intent": r.get("Intents", ""),
+    "competitor_rankings": f"housecanary: #{r.get('housecanary.com')}, bricked: #{r.get('bricked.ai')}"
+} if r["Keyword"] and "dealcheck" not in r["Keyword"].lower() and (r.get("dealcheck.io") == "0" or (r.get("dealcheck.io", "").isdigit() and int(r.get("dealcheck.io")) > 50)) and ((r.get("housecanary.com", "").isdigit() and 1 <= int(r.get("housecanary.com")) <= 40) or (r.get("bricked.ai", "").isdigit() and 1 <= int(r.get("bricked.ai")) <= 40)) else None), key=lambda x: x["search_volume"], reverse=True)[:10]
+
+# 4. Parse Backlinks
 seen = set()
-with open("data/3_backlink_analytics_referrals.csv", "r", encoding="utf-8") as f:
-    for r in csv.DictReader(f):
-        try:
-            ascore = int(r.get("Page ascore", "0") or "0")
-            src_url = r.get("Source url", "")
-            m = re.search(r'https?://(?:www\.)?([^/]+)', src_url)
-            dom = m.group(1) if m else src_url
-            if dom and dom not in seen and "blogspot" not in dom and "tumblr" not in dom:
-                seen.add(dom)
-                backlinks.append({
-                    "domain": dom, "authority_score": ascore,
-                    "page_title": r.get("Source title", ""), "anchor": r.get("Anchor", "")
-                })
-        except Exception: continue
-backlinks.sort(key=lambda x: x["authority_score"], reverse=True)
-top_backlinks = backlinks[:12]
+def parse_backlink(r):
+    url = r["Source url"]
+    m = re.search(r'https?://(?:www\.)?([^/]+)', url)
+    dom = m.group(1) if m else url
+    if dom and dom not in seen and "blogspot" not in dom and "tumblr" not in dom:
+        seen.add(dom)
+        return {"domain": dom, "authority_score": int(r["Page ascore"] or 0), "page_title": r["Source title"], "anchor": r["Anchor"]}
+    return None
+top_backlinks = sorted(read_csv("data/3_backlink_analytics_referrals.csv", parse_backlink), key=lambda x: x["authority_score"], reverse=True)[:10]
 
 combined_dataset = {
-    "dealcheck_organic_strengths": top_org, "critical_seo_competitor_gaps": top_gaps, "high_value_referring_backlink_domains": top_backlinks
+    "dealcheck_organic_strengths": top_dc, "bricked_organic_strengths": top_br, "critical_seo_competitor_gaps": top_gaps, "high_value_referring_backlink_domains": top_backlinks
 }
-print(f"Loaded datasets. Analyzing {len(top_org)} strengths + {len(top_gaps)} gaps + {len(top_backlinks)} backlink domains...")
+print(f"Loaded: DC strengths ({len(top_dc)}), Bricked strengths ({len(top_br)}), Gaps ({len(top_gaps)}), Backlinks ({len(top_backlinks)})")
 
 system_prompt = """
-You are an expert Real Estate SEO Strategist. Analyze competitor keywords, gaps, and backlinks (DealCheck, HouseCanary, Bricked.ai), and build an SEO roadmap.
-1. TARGETS: Pick top targets based on "Low-hanging fruit" gaps (high volume, low difficulty where competitors rank but DealCheck is weak/absent) and high CPC.
-2. PAGES: Suggest GHL/CMS Landing Pages (with structures and CTAs).
-3. BLOGS: Design blog topics with talking points and lead magnets.
-4. BACKLINKS: Suggest backlink campaigns targeting high-authority domains/categories in our list (e.g. rentcast.io, realwealth.com, w2capitalist.com, apps.apple.com), with strategic pitch hooks and anchor text.
+You are an expert Real Estate SEO Strategist. Analyze competitor keywords, gaps, and referring backlinks (DealCheck, Bricked.ai, HouseCanary), and build an SEO roadmap.
+1. TARGETS: Pick top targets based on "Low-hanging fruit" gaps (high volume, low difficulty where competitors rank but DealCheck is weak/absent), high CPC terms, and Bricked's strongest rankings.
+2. PAGES: Suggest high-converting GHL/CMS Landing Pages (with structures and CTAs).
+3. BLOGS: Design blog topics with detailed talking points and lead magnets.
+4. BACKLINKS: Suggest backlink campaigns targeting high-authority domains in our list (e.g. rentcast.io, realwealth.com, w2capitalist.com), with strategic pitch hooks and anchor text.
 5. Respond ONLY with valid JSON matching the schema. No markdown wraps or conversational text.
 """
 

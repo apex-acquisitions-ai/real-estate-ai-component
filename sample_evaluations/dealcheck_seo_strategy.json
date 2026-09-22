@@ -1,119 +1,135 @@
 {
-  "executive_summary": "An analysis of current organic rankings and competitor gaps reveals massive potential to capture high-volume informational and commercial traffic in the real estate niche. While DealCheck dominates mid-tail financial metric terms like 'irr equation', competitors like HouseCanary are capturing critical top-of-funnel traffic for high-volume terms such as 'what is a cap rate' and localized market data. By prioritizing low-hanging fruit keywords, expanding our landing page architecture, and executing strategic link-building campaigns with high-DA referring domains, DealCheck can exponentially increase its organic visibility and capture lucrative commercial queries.",
+  "executive_summary": "Analysis of the organic search landscape reveals major growth opportunities by bridging keyword gaps left by competitors like HouseCanary and Bricked.ai. While DealCheck dominates mid-tier terms like 'irr equation', capturing high-volume informational gaps like 'what is a cap rate' and high-intent commercial keywords like 'arv calculator' and 'propstream alternative' will unlock significant high-intent traffic. Our strategy focuses on deploying targeted landing pages, comprehensive blog guides, and leveraging high-authority referring domains for robust backlink acquisition.",
   "top_keyword_opportunities": [
+    {
+      "keyword": "what is a cap rate",
+      "search_volume": 110000,
+      "keyword_difficulty": 52,
+      "cpc": 0.13,
+      "intent": "informational",
+      "strategic_value": "Massive search volume with a massive competitor gap (HouseCanary at #31, Bricked unranked). Perfect for top-of-funnel capture."
+    },
+    {
+      "keyword": "arv calculator",
+      "search_volume": 1300,
+      "keyword_difficulty": 7,
+      "cpc": 2.36,
+      "intent": "commercial",
+      "strategic_value": "Extremely low keyword difficulty with high commercial intent. Directly aligns with Bricked's current focus, offering an easy win for top rankings."
+    },
     {
       "keyword": "cap rate california",
       "search_volume": 5400,
       "keyword_difficulty": 12,
       "cpc": 0.81,
-      "intent": "Informational",
-      "strategic_value": "Extremely low difficulty for high volume, highly targeted by region and investment intent."
+      "intent": "informational",
+      "strategic_value": "High-volume, low-difficulty localized investing intent. Excellent for hyper-targeted location landing pages."
     },
     {
-      "keyword": "mls real estate api tools niche saas opportunity",
-      "search_volume": 4400,
-      "keyword_difficulty": 13,
-      "cpc": 0.0,
-      "intent": "Informational",
-      "strategic_value": "Captures B2B and advanced investor search traffic with virtually no keyword barrier."
+      "keyword": "propstream alternative",
+      "search_volume": 260,
+      "keyword_difficulty": 15,
+      "cpc": 8.49,
+      "intent": "informational",
+      "strategic_value": "High CPC indicating immense buyer value. Capturing users looking to switch or find cheaper alternatives to competitors."
     },
     {
-      "keyword": "what is cap rate",
-      "search_volume": 5400,
-      "keyword_difficulty": 45,
-      "cpc": 0.13,
-      "intent": "Informational",
-      "strategic_value": "Foundational real estate investment concept with massive volume and direct product-led bridge."
-    },
-    {
-      "keyword": "is the housing market going to crash",
-      "search_volume": 6600,
-      "keyword_difficulty": 35,
-      "cpc": 1.3,
-      "intent": "Informational",
-      "strategic_value": "High-urgency market trends query that builds massive top-of-funnel brand awareness."
-    },
-    {
-      "keyword": "cap rate formula",
-      "search_volume": 4400,
-      "keyword_difficulty": 41,
-      "cpc": 0.19,
-      "intent": "Informational",
-      "strategic_value": "High intent match for users actively evaluating property profitability using software tools."
+      "keyword": "real estate investment software",
+      "search_volume": 1900,
+      "keyword_difficulty": 39,
+      "cpc": 12.96,
+      "intent": "commercial, informational",
+      "strategic_value": "High commercial intent and lucrative CPC. DealCheck currently ranks #8; optimization can push it into top 3 positions."
     }
   ],
   "suggested_landing_pages": [
     {
-      "title": "California Cap Rate Calculator & Market Analysis Tool",
-      "slug": "california-cap-rate-calculator",
-      "target_keyword": "cap rate california",
-      "main_cta": "Calculate California Property Returns",
+      "title": "Free ARV Calculator & Property Valuation Tool",
+      "slug": "free-arv-calculator",
+      "target_keyword": "arv calculator",
+      "main_cta": "Try Free ARV Calculator",
       "suggested_structure": [
-        "Hero Section with Regional Property Calculator",
-        "Current California Real Estate Market Trends",
-        "How to Calculate Cap Rate in Major CA Metro Areas",
-        "Interactive Investment Comparison Table",
-        "Bottom of Page CTA: Analyze Your CA Deal Free"
+        "Interactive ARV & Repair Cost Calculator Widget",
+        "How to Calculate After Repair Value (ARV) in 3 Steps",
+        "Comparison: Manual Comps vs. Automated Valuation",
+        "Frequently Asked Questions on Flipping Software"
       ]
     },
     {
-      "title": "Real Estate Investment Calculator & Property Analysis Software",
-      "slug": "real-estate-investment-software",
-      "target_keyword": "real estate investment software",
-      "main_cta": "Start Free Property Analysis",
+      "title": "Best PropStream Alternatives for Real Estate Investors",
+      "slug": "propstream-alternatives",
+      "target_keyword": "propstream alternative",
+      "main_cta": "Compare Features & Start Free Trial",
       "suggested_structure": [
-        "Hero Section Highlighting Fast Underwriting",
-        "Core Features: Rental Analysis, Comps, and Projections",
-        "Comparison with Traditional Spreadsheets",
-        "Customer Testimonials and Success Stories",
-        "Final CTA: Create Free Account"
+        "Overview of Top Real Estate Data and Analysis Platforms",
+        "Feature-by-Feature Comparison Table (Pricing, Data Accuracy, Analysis Tools)",
+        "Why Investors are Switching",
+        "Final Verdict & Recommendation"
+      ]
+    },
+    {
+      "title": "California Real Estate Cap Rate & Market Analysis Tool",
+      "slug": "cap-rate-california",
+      "target_keyword": "cap rate california",
+      "main_cta": "Analyze CA Properties Now",
+      "suggested_structure": [
+        "Current California Real Estate Market Trends by City",
+        "Interactive Cap Rate Formula & Calculator",
+        "Average Cap Rates Across Los Angeles, San Francisco, and San Diego",
+        "Unlock Off-Market Deals in California"
       ]
     }
   ],
   "suggested_blog_topics": [
     {
-      "title": "What Is a Cap Rate? The Definitive Guide for Real Estate Investors",
+      "title": "What is a Cap Rate? The Ultimate Guide for Real Estate Investors",
       "target_keyword": "what is a cap rate",
-      "primary_intent": "Informational",
+      "primary_intent": "informational",
       "key_talking_points": [
-        "Definition and importance of capitalization rate",
-        "Step-by-step breakdown of the cap rate formula",
-        "What constitutes a good cap rate by market",
-        "Limitations of cap rates and how to use them with ROI and IRR"
+        "Definition of Capitalization Rate and why it matters",
+        "Step-by-step formula: Net Operating Income (NOI) divided by Property Value",
+        "What constitutes a 'good' cap rate by asset class and market",
+        "Limitations of cap rates and how to use them with IRR and Cash-on-Cash Return"
       ],
-      "lead_magnet": "Free Real Estate Investment Calculator Spreadsheet & App"
+      "lead_magnet": "Free Real Estate Investment Calculator & Cap Rate Spreadsheet"
     },
     {
-      "title": "Is the Housing Market Going to Crash? Predictions for 2026",
+      "title": "Is the Housing Market Going to Crash? 2026 Forecast & Data Analysis",
       "target_keyword": "is the housing market going to crash",
-      "primary_intent": "Informational",
+      "primary_intent": "informational",
       "key_talking_points": [
-        "Current inventory levels and interest rate impacts",
-        "Expert forecasts on housing market corrections",
-        "How investors can protect capital during economic shifts",
-        "Identifying recession-proof rental markets"
+        "Current inventory levels vs. historical buyer demand",
+        "Interest rate projections and Federal Reserve impacts",
+        "Regional housing market resilience (Florida, California, Midwest)",
+        "Actionable advice for buyers, sellers, and investors in 2026"
       ],
-      "lead_magnet": "2026 Market Crash Checklist & Deal Screening Guide"
+      "lead_magnet": "2026 Market Trend Report & Deal Screening Checklist"
     }
   ],
   "suggested_backlink_campaigns": [
     {
       "domain": "rentcast.io",
       "authority_score": 70,
-      "strategic_angle": "Propose an API and data integration partnership or mutual resource page listing for complementary property evaluation platforms.",
-      "anchor_text_suggestion": "DealCheck rental property analyzer"
+      "strategic_angle": "Resource page partnership / API integration cross-promotion highlighting market data synergy.",
+      "anchor_text_suggestion": "DealCheck rental analysis integration"
     },
     {
       "domain": "realwealth.com",
       "authority_score": 42,
-      "strategic_angle": "Contribute an expert guest column on beginner rental property underwriting workflows featuring our analysis framework.",
-      "anchor_text_suggestion": "DealCheck software"
+      "strategic_angle": "Guest contribution on 'How to Analyze Your First Rental Property' featuring embedded calculation frameworks.",
+      "anchor_text_suggestion": "investment property analysis software"
     },
     {
       "domain": "w2capitalist.com",
       "authority_score": 51,
-      "strategic_angle": "Collaborate on a roundup review of automated productivity and underwriting tools tailored for busy working professionals.",
+      "strategic_angle": "Tool roundup update pitch highlighting new AI features and mobile app updates.",
       "anchor_text_suggestion": "Underwrite Any Investment Property in Minutes"
+    },
+    {
+      "domain": "cognitivefuture.ai",
+      "authority_score": 42,
+      "strategic_angle": "AI real estate software directory submission and expert roundup contribution on automated underwriting.",
+      "anchor_text_suggestion": "AI-powered real estate analysis tool"
     }
   ]
 }
