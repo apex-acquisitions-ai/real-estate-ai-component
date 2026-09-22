@@ -28,3 +28,32 @@ class DealEvaluationResponse(BaseModel):
     outreach_assets: OutreachAssets
     audit_flags: Optional[List[str]] = []
 
+
+class SEOKeywordOpportunity(BaseModel):
+    keyword: str
+    search_volume: int
+    keyword_difficulty: int = Field(description="Difficulty rating 0 to 100")
+    cpc: float
+    intent: str
+    strategic_value: str = Field(description="Why this is a high-value term to target")
+
+class LandingPageIdea(BaseModel):
+    title: str
+    slug: str
+    target_keyword: str
+    main_cta: str = Field(description="Primary lead magnet or call to action")
+    suggested_structure: List[str] = Field(description="Structural sections of the landing page")
+
+class BlogTopic(BaseModel):
+    title: str
+    target_keyword: str
+    primary_intent: str
+    key_talking_points: List[str]
+    lead_magnet: str
+
+class SEOStrategyResponse(BaseModel):
+    executive_summary: str = Field(description="Overview of the organic SEO opportunity based on competitor data")
+    top_keyword_opportunities: List[SEOKeywordOpportunity]
+    suggested_landing_pages: List[LandingPageIdea]
+    suggested_blog_topics: List[BlogTopic]
+

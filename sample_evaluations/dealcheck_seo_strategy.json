@@ -1,0 +1,92 @@
+{
+  "executive_summary": "The competitor data reveals a powerful dual-funnel SEO opportunity. First, high-intent commercial terms like 'real estate investment software' (CPC $12.96) offer immediate SaaS acquisition potential. Second, low-difficulty informational 'how-to' queries such as 'how to quickly screen real estate deals criteria' and calculation equations like 'irr equation' already drive strong baseline traffic and can be aggressively monetized as top-of-funnel conversion magnets into a deal analysis software platform.",
+  "top_keyword_opportunities": [
+    {
+      "keyword": "real estate investment software",
+      "search_volume": 1900,
+      "keyword_difficulty": 39,
+      "cpc": 12.96,
+      "intent": "commercial, informational",
+      "strategic_value": "Highest commercial intent with a strong CPC of $12.96. Ranking here captures active buyers looking for tools like DealCheck."
+    },
+    {
+      "keyword": "how to quickly screen real estate deals criteria",
+      "search_volume": 1900,
+      "keyword_difficulty": 17,
+      "cpc": 0.0,
+      "intent": "informational",
+      "strategic_value": "Low difficulty (17) with proven existing rankings. Perfect low-hanging fruit to capture investors early in their property evaluation workflow."
+    },
+    {
+      "keyword": "irr equation",
+      "search_volume": 3600,
+      "keyword_difficulty": 34,
+      "cpc": 0.29,
+      "intent": "informational",
+      "strategic_value": "High search volume and already ranking well (Position 1). Capitalize on this traffic by offering embedded calculators and software tools."
+    },
+    {
+      "keyword": "dscr ratio formula",
+      "search_volume": 1300,
+      "keyword_difficulty": 31,
+      "cpc": 1.08,
+      "intent": "informational",
+      "strategic_value": "Essential metric for real estate investors using commercial loans. Captures high-intent property investors analyzing multi-family or commercial assets."
+    }
+  ],
+  "suggested_landing_pages": [
+    {
+      "title": "Best Real Estate Investment Analysis Software",
+      "slug": "real-estate-investment-software",
+      "target_keyword": "real estate investment software",
+      "main_cta": "Start Free Deal Analysis Trial",
+      "suggested_structure": [
+        "Hero section with software UI screenshot and direct free trial CTA",
+        "Key features breakdown (comps, financial projections, PDF reports)",
+        "Comparison table against traditional spreadsheets and legacy software",
+        "Interactive ROI calculator widget",
+        "Customer testimonials and case studies",
+        "Final FAQ and conversion footer"
+      ]
+    },
+    {
+      "title": "Real Estate Deal Screening Criteria Checklist & Tool",
+      "slug": "how-to-screen-real-estate-deals",
+      "target_keyword": "how to quickly screen real estate deals criteria",
+      "main_cta": "Download Deal Screening Template & Free Software Access",
+      "suggested_structure": [
+        "Introduction to rapid deal screening frameworks",
+        "The 5 core metrics every investor must check (Cap Rate, NOI, Cash-on-Cash, DSCR, IRR)",
+        "Downloadable Excel/Google Sheets underwriting template",
+        "How to automate deal screening using modern software",
+        "Call to action to test properties instantly"
+      ]
+    }
+  ],
+  "suggested_blog_topics": [
+    {
+      "title": "Mastering the IRR Equation: How to Calculate Internal Rate of Return for Real Estate",
+      "target_keyword": "irr equation",
+      "primary_intent": "informational",
+      "key_talking_points": [
+        "Definition of Internal Rate of Return (IRR) in property investing",
+        "Step-by-step breakdown of the IRR mathematical formula",
+        "Why IRR matters more than simple cash-on-cash return for long-term holds",
+        "How software automates complex cash flow projections"
+      ],
+      "lead_magnet": "Free Real Estate Investment Calculator & IRR Model"
+    },
+    {
+      "title": "How to Calculate DSCR: The Ultimate Guide for Real Estate Investors",
+      "target_keyword": "dscr ratio formula",
+      "primary_intent": "informational",
+      "key_talking_points": [
+        "What is Debt Service Coverage Ratio (DSCR) and why lenders care",
+        "The standard DSCR formula (Net Operating Income / Total Debt Service)",
+        "What constitutes a 'good' DSCR for residential and commercial loans",
+        "Strategies to improve property DSCR before applying for financing"
+      ],
+      "lead_magnet": "DSCR & Commercial Loan Calculator Template"
+    }
+  ]
+}
