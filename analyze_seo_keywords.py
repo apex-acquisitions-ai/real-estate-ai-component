@@ -37,27 +37,30 @@ top_br_gaps = sorted(r_csv("data/7_bricked_keyword_gap.csv", lambda r: {
 } if r["Keyword"] else None), key=lambda x: x["search_volume"], reverse=True)[:10]
 
 seen = set()
-def parse_backlink(r):
+def parse_backlink(r, s):
     url = r["Source url"]
     m = re.search(r'https?://(?:www\.)?([^/]+)', url)
     dom = m.group(1) if m else url
-    if dom and dom not in seen and "blogspot" not in dom and "tumblr" not in dom:
-        seen.add(dom)
-        return {"domain": dom, "authority_score": int(r["Page ascore"] or 0), "anchor": r["Anchor"]}
+    if dom and dom not in s and "blogspot" not in dom and "tumblr" not in dom:
+        s.add(dom)
+        return {"domain": dom, "authority_score": int(r.get("Page ascore") or r.get("authority_score") or 0), "anchor": r["Anchor"]}
     return None
-top_backlinks = sorted(r_csv("data/3_backlink_analytics_referrals.csv", parse_backlink), key=lambda x: x["authority_score"], reverse=True)[:10]
+
+s_dc, s_br = set(), set()
+top_dc_bl = sorted(r_csv("data/3_backlink_analytics_referrals.csv", lambda r: parse_backlink(r, s_dc)), key=lambda x: x["authority_score"], reverse=True)[:10]
+top_br_bl = sorted(r_csv("data/8_bricked_backlink_analytics.csv", lambda r: parse_backlink(r, s_br)), key=lambda x: x["authority_score"], reverse=True)[:10]
 
 combined_dataset = {
-    "dealcheck_organic_strengths": top_dc, "bricked_organic_strengths": top_br, "critical_dealcheck_competitor_gaps": top_gaps, "bricked_keyword_gaps": top_br_gaps, "high_value_referring_backlink_domains": top_backlinks
+    "dc_strengths": top_dc, "br_strengths": top_br, "dc_gaps": top_gaps, "br_gaps": top_br_gaps, "dc_backlinks": top_dc_bl, "br_backlinks": top_br_bl
 }
-print(f"DC Strengths ({len(top_dc)}), Bricked Strengths ({len(top_br)}), Gaps ({len(top_gaps)}), Bricked Gaps ({len(top_br_gaps)}), Backlinks ({len(top_backlinks)})")
+print(f"Data parsed: DC_str({len(top_dc)}), BR_str({len(top_br)}), DC_gaps({len(top_gaps)}), BR_gaps({len(top_br_gaps)}), DC_bl({len(top_dc_bl)}), BR_bl({len(top_br_bl)})")
 
 system_prompt = """
 You are an expert Real Estate SEO Strategist. Analyze competitor keywords, gaps, and referring backlinks (DealCheck, Bricked.ai, HouseCanary), and build an SEO roadmap.
 1. TARGETS: Pick top targets based on "Low-hanging fruit" gaps (high volume, low difficulty where competitors rank but DealCheck is weak/absent), high CPC terms, and Bricked's strongest rankings/gaps.
 2. PAGES: Suggest high-converting GHL/CMS Landing Pages (with structures and CTAs).
 3. BLOGS: Design blog topics with detailed talking points and lead magnets.
-4. BACKLINKS: Suggest backlink campaigns targeting high-authority domains in our list (e.g. rentcast.io, realwealth.com, w2capitalist.com), with strategic pitch hooks and anchor text.
+4. BACKLINKS: Suggest backlink campaigns targeting high-authority domains in our lists (e.g. rentcast.io, realwealth.com, completeaitraining.com), with strategic pitch hooks and anchor text.
 5. Respond ONLY with valid JSON matching the schema. No markdown wraps or conversational text.
 """
 
@@ -80,12 +83,6 @@ try:
     print("\n[Top Opportunities]")
     for kw in result["top_keyword_opportunities"][:5]:
         print(f"  - '{kw['keyword']}' (Vol: {kw['search_volume']}, KD: {kw['keyword_difficulty']})")
-    print("\n[Suggested Landing Pages]")
-    for lp in result["suggested_landing_pages"][:2]:
-        print(f"  - '{lp['title']}' (Slug: /{lp['slug']})")
-    print("\n[Suggested Blogs]")
-    for bt in result["suggested_blog_topics"][:2]:
-        print(f"  - Topic: '{bt['title']}'")
     print("\n[Suggested Backlink Campaigns]")
     for bc in result["suggested_backlink_campaigns"][:3]:
         print(f"  - Domain: '{bc['domain']}' (Authority: {bc['authority_score']})\n    Angle: {bc['strategic_angle']}\n    Anchor: '{bc['anchor_text_suggestion']}'")
