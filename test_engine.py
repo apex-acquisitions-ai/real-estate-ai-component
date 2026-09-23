@@ -1,48 +1,51 @@
 import json
 import os
+import time
 from dotenv import load_dotenv
 from openai import OpenAI
 from schema import DealEvaluationResponse
 
-# 1. Load Environment Variables
 load_dotenv()
 
-# Initialize OpenAI SDK pointing to Gemini's OpenAI-compatible base URL
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
-)
+# Smart auto-detection of Gemini vs OpenAI keys to ensure zero-config execution
+api_key = os.getenv("OPENAI_API_KEY")
+is_gemini = api_key and api_key.startswith("AQ.")
 
-# 2. Read System Prompt File
-with open("system_prompt.txt", "r", encoding="utf-8") as f:
-    system_prompt = f.read()
+base_url = "https://generativelanguage.googleapis.com/v1beta/openai/" if is_gemini else None
+model_name = "models/gemini-3.5-flash-lite" if is_gemini else "gpt-4o-mini"
 
-# 3. Sample Property Input
-sample_property_input = """
-Address: 1244 Maplewood Dr, Indianapolis, IN
-SqFt: 1850
-Beds: 3 | Baths: 2 | Year Built: 1988
-Asking Price: $165,000
-Target ARV: $260,000
-Condition Notes: Needs a new roof, outdated kitchen, and full interior paint. Standard rehab level.
-Wholesale Fee Target: $12,000
-"""
+client = OpenAI(api_key=api_key, base_url=base_url)
 
-# 4. Call API with Structured Outputs Enforcement
-print("Running Real Estate AI Engine...\n")
+def evaluate_deal_api(property_input: str):
+    start_time = time.time()
+    
+    with open("system_prompt.txt", "r", encoding="utf-8") as f:
+        system_prompt = f.read()
 
-response = client.beta.chat.completions.parse(
-    model="models/gemini-3.5-flash-lite",  # Low-overhead lite model
-    messages=[
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": f"Evaluate this property:\n{sample_property_input}"}
-    ],
-    response_format=DealEvaluationResponse,
-    temperature=0.1
-)
+    response = client.beta.chat.completions.parse(
+        model=model_name,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"Evaluate this property:\n{property_input}"}
+        ],
+        response_format=DealEvaluationResponse,
+        temperature=0.1
+    )
+    
+    latency = round(time.time() - start_time, 2)
+    output_data = response.choices[0].message.parsed.model_dump()
+    
+    # Telemetry metadata for investor tracking
+    telemetry = {
+        "latency_seconds": latency,
+        "prompt_tokens": response.usage.prompt_tokens,
+        "completion_tokens": response.usage.completion_tokens,
+        "total_tokens": response.usage.total_tokens
+    }
+    
+    return {"data": output_data, "telemetry": telemetry}
 
-# 5. Extract and Format Clean JSON Result
-result = response.choices[0].message.parsed.model_dump()
-
-print("--- AI COMPONENT JSON OUTPUT ---")
-print(json.dumps(result, indent=2))
+if __name__ == "__main__":
+    sample_input = "Address: 1244 Maplewood Dr, Indianapolis, IN | SqFt: 1850 | Asking: $165,000 | ARV: $260,000 | Condition: Standard rehab needed."
+    res = evaluate_deal_api(sample_input)
+    print(json.dumps(res, indent=2))
