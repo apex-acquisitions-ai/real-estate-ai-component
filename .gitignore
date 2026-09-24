@@ -1,13 +1,24 @@
-# Virtual Environment
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env.*
+*.pem
+*.key
+
+# Python Execution & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
 venv/
 .venv/
 env/
+ENV/
 
-# Python Cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Data Files & Lead Exports (Protects Lead Lists)
+data/*.csv
+data/*.xlsx
+*.csv
 
-# Environment Variables
-.env
+# System & IDE Metadata
+.DS_Store
+.vscode/
+.idea/
