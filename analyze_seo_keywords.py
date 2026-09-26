@@ -4,7 +4,12 @@ from openai import OpenAI
 from schema import SEOStrategyResponse
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+gemini_key = os.getenv("GEMINI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
+api_key = gemini_key if gemini_key else openai_key
+base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+client = OpenAI(api_key=api_key, base_url=base_url)
 
 def r_csv(p, f):
     items = []

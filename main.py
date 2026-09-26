@@ -30,11 +30,34 @@ def verify_api_key(api_key: str = Security(api_key_header)):
         return api_key
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or missing API Key")
 
-# Smart auto-detection of Gemini vs OpenAI keys
-api_key = os.getenv("OPENAI_API_KEY")
-is_gemini = api_key and api_key.startswith("AQ.")
-base_url = "https://generativelanguage.googleapis.com/v1beta/openai/" if is_gemini else None
-model_name = "models/gemini-3.5-flash-lite" if is_gemini else "gpt-4o-mini"
+# Initialize client using your Gemini key and Google's OpenAI-compatible base URL
+gemini_key = os.getenv("GEMINI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
+
+# Sanitize inputs (handle empty strings, None, or placeholder strings)
+def is_valid_key(key: Optional[str]) -> bool:
+    if not key:
+        return False
+    clean = key.strip()
+    return bool(clean and "your_" not in clean and clean != "placeholder_key" and clean != "placeholder_password")
+
+if is_valid_key(gemini_key):
+    api_key = gemini_key.strip()
+    base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    model_name = "models/gemini-3.5-flash-lite"
+elif is_valid_key(openai_key):
+    api_key = openai_key.strip()
+    if api_key.startswith("AQ."):
+        base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+        model_name = "models/gemini-3.5-flash-lite"
+    else:
+        base_url = None
+        model_name = "gpt-4o-mini"
+else:
+    # Prevent startup crash on cloud environments (Render/Vercel) when env keys are being loaded
+    api_key = "placeholder_key"
+    base_url = None
+    model_name = "gpt-4o-mini"
 
 client = OpenAI(api_key=api_key, base_url=base_url)
 
@@ -58,6 +81,11 @@ class GHLWorkflowPayload(BaseModel):
 
 @app.post("/v1/evaluate", response_model=dict, dependencies=[Depends(verify_api_key)], tags=["Core Analysis"])
 async def evaluate_property(request: PropertyEvaluationRequest):
+    if client.api_key == "placeholder_key":
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="AI Underwriting Engine is missing valid credentials. Please ensure GEMINI_API_KEY or OPENAI_API_KEY is configured in your Render environment variables."
+        )
     start_time = time.time()
     try:
         with open("system_prompt.txt", "r", encoding="utf-8") as f:
@@ -154,6 +182,9 @@ async def oauth_callback(code: str = Query(...)):
 
 async def process_and_update_ghl_contact(payload: GHLWorkflowPayload):
     """Background task to run OpenAI/Gemini evaluation and write JSON output back to GHL contact."""
+    if client.api_key == "placeholder_key":
+        print("[Error] AI Underwriting Engine is missing valid credentials. Background evaluation skipped.")
+        return
     location_id = payload.locationId
     token_info = TOKEN_STORE.get(location_id)
 
@@ -232,14 +263,18 @@ async def process_and_update_ghl_contact(payload: GHLWorkflowPayload):
             print(f"[Failed] GHL Contact Update Error: {res.text}")
 
 
+# FastAPI Non-Blocking Background Task Handler
 @app.post("/v1/ghl/workflow-action", tags=["GHL Integration"])
-async def ghl_workflow_action(payload: GHLWorkflowPayload, background_tasks: BackgroundTasks):
+async def ghl_workflow_action(
+    payload: GHLWorkflowPayload, 
+    background_tasks: BackgroundTasks
+):
     """
-    Endpoint triggered by GoHighLevel Workflows.
-    Responds immediately (200 OK) to prevent workflow timeouts and processes analysis in background.
+    Returns HTTP 200 immediately to satisfy GHL's execution window,
+    then executes evaluation and contact updates asynchronously.
     """
     background_tasks.add_task(process_and_update_ghl_contact, payload)
-    return {"status": "queued", "message": "Deal evaluation started for GHL workflow."}
+    return {"status": "queued", "message": "Deal evaluation executing in background."}
 
 
 # ==========================================

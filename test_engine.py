@@ -7,12 +7,22 @@ from schema import DealEvaluationResponse
 
 load_dotenv()
 
-# Smart auto-detection of Gemini vs OpenAI keys to ensure zero-config execution
-api_key = os.getenv("OPENAI_API_KEY")
-is_gemini = api_key and api_key.startswith("AQ.")
+# Initialize client using your Gemini key and Google's OpenAI-compatible base URL
+gemini_key = os.getenv("GEMINI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
 
-base_url = "https://generativelanguage.googleapis.com/v1beta/openai/" if is_gemini else None
-model_name = "models/gemini-3.5-flash-lite" if is_gemini else "gpt-4o-mini"
+if gemini_key:
+    api_key = gemini_key
+    base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    model_name = "models/gemini-3.5-flash-lite"
+elif openai_key and openai_key.startswith("AQ."):
+    api_key = openai_key
+    base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    model_name = "models/gemini-3.5-flash-lite"
+else:
+    api_key = openai_key
+    base_url = None
+    model_name = "gpt-4o-mini"
 
 client = OpenAI(api_key=api_key, base_url=base_url)
 

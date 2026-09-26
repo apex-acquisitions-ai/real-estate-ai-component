@@ -8,11 +8,13 @@ from schema import DealEvaluationResponse
 # Load environment variables
 load_dotenv()
 
-# Initialize OpenAI SDK pointing to Gemini's OpenAI-compatible base URL
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
-)
+# Initialize client using your Gemini key and Google's OpenAI-compatible base URL
+gemini_key = os.getenv("GEMINI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
+api_key = gemini_key if gemini_key else openai_key
+base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+client = OpenAI(api_key=api_key, base_url=base_url)
 
 # Read System Prompt File
 with open("system_prompt.txt", "r", encoding="utf-8") as f:
