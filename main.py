@@ -126,7 +126,7 @@ def authorize_ghl():
     """Redirects agency admins to GHL consent page when installing the app."""
     scopes = "contacts.readonly contacts.write locations/customFields.readonly locations/customFields.write workflows.readonly"
     auth_url = (
-        f"{GHL_API_BASE}/oauth/chooselocation?"
+        f"https://marketplace.gohighlevel.com/oauth/chooselocation?"
         f"response_type=code&"
         f"client_id={GHL_CLIENT_ID}&"
         f"redirect_uri={GHL_REDIRECT_URI}&"
