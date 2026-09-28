@@ -1,0 +1,17 @@
+Hi GHL App Review Team! This is Alex from DealEngine. Today, I'm going to show you how our 'DealEngine Real Estate Underwriter' app automatically provisions custom contact fields and instantly underwrites property leads right inside GoHighLevel workflows.
+
+First, let's look at our automated installation. When an agency installs DealEngine, they click our secure OAuth link, choose their GHL sub-account, and click Authorize.
+
+As you can see, we are successfully redirected. In the background, DealEngine immediately performs a secure token handshake and auto-provisions all required custom fields. If we navigate to our GHL settings and refresh our Custom Fields, you'll see that DealEngine MAO, DealEngine Rehab Estimate, and DealEngine Offer Script have all been created automatically with the correct monetary and large-text data types. Zero manual setup is required.
+
+Now let's see how we trigger an evaluation. Inside GHL Automations, we've built a simple workflow triggered by the tag run-underwrite.
+
+When triggered, it executes a Webhook POST action to our secure API. In GHL's custom payload, we map GHL's standard contact variables: Address, City, Postal Code, Contact ID, and Location ID.
+
+Let's see it in action. Here we have a lead—Test Seller—with a physical property address in Indianapolis, Indiana. We simply apply our trigger tag, run-underwrite, and hit Save. The workflow triggers and sends GHL's data to our backend.
+
+Our backend instantly queues the task, runs the live evaluation, and queries our AI underwriter. If we refresh our contact card and scroll down, look at that! The DealEngine AI has calculated the Maximum Allowable Offer of ninety-eight thousand dollars, estimated standard repairs of seventy-four thousand dollars, and written the complete SMS and Email scripts directly back into the CRM!
+
+These fields are now ready to be referenced directly in GHL automated emails or text message campaigns, turning underwriting into an automated revenue center for your agency.
+
+Our app is fully compatible with GHL's API v2, and is protected by secure token auto-refreshes. Thank you so much for your time, and we look forward to joining the GHL App Marketplace!
