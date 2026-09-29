@@ -404,6 +404,12 @@ async def ghl_workflow_action(
 
 # ==========================================
 # 4. HEALTH CHECK DIAGNOSTIC ENDPOINT
+
+@app.get("/v1/ghl/connected-locations", tags=["Diagnostics"])
+def list_connected_locations():
+    """Returns a list of connected GHL Location IDs (no credentials exposed)."""
+    return {"connected_locations": list(TOKEN_STORE.keys())}
+
 # ==========================================
 
 # ==========================================
