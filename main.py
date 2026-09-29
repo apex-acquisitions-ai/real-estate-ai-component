@@ -521,6 +521,77 @@ def terms_of_service():
             <h2>5. Contact Information</h2>
             <p>✉️ <strong>Support Email:</strong> <a href="mailto:support@rundealengine.com">support@rundealengine.com</a></p>
         </div>
+
+
+@app.get("/", response_class=HTMLResponse, tags=["Home"])
+def home_page():
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DealEngine AI Evaluator - Automation Hub</title>
+        <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #334155; margin: 0; background-color: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; }
+            .hero { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: white; padding: 80px 20px; text-align: center; }
+            .hero-container { max-width: 800px; margin: 0 auto; }
+            .hero h1 { font-size: 2.5rem; color: #38BDF8; margin: 0 0 10px 0; }
+            .hero p { font-size: 1.25rem; color: #94A3B8; margin: 0 0 30px 0; }
+            .container { max-width: 900px; margin: 0 auto; padding: 50px 20px; flex: 1; }
+            .btn { display: inline-block; background-color: #0EA5E9; color: white; padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(14, 165, 233, 0.2); transition: all 0.2s; }
+            .btn:hover { background-color: #0284C7; transform: translateY(-1px); }
+            .features { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 10px; }
+            .feature-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); }
+            .feature-card h3 { color: #0F172A; margin: 0 0 10px 0; font-size: 1.25rem; }
+            .feature-card p { color: #64748B; margin: 0; font-size: 1rem; }
+            footer { background: #0F172A; color: #94A3B8; padding: 40px 20px; text-align: center; font-size: 0.95rem; border-top: 1px solid #1E293B; }
+            footer a { color: #38BDF8; text-decoration: none; margin: 0 15px; }
+            footer a:hover { text-decoration: underline; }
+            .footer-links { margin-bottom: 15px; }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="hero-container">
+                <h1>DealEngine AI Evaluator</h1>
+                <p>Automate real estate underwriting, MAO calculations, and outreach scripts directly inside GHL workflows.</p>
+                <a href="/oauth/authorize" class="btn">Install App in GHL</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <h3>⚡ Auto-Field Provisioning</h3>
+                    <p>On installation, DealEngine instantly provisions all custom monetary and text fields inside your GHL sub-account. No manual setup required.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 AI-Powered Underwriting</h3>
+                    <p>Leverages Google Gemini & OpenAI models to instantly calculate accurate MAO, Rehab estimates, and property viabilities when leads enter your pipeline.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 Ready-to-Send Pitches</h3>
+                    <p>Produces customized property SMS and Email pitch scripts based on real-world local math, saving hours of manual sales copywriting.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Seamless GHL CRM Writes</h3>
+                    <p>Integrates natively with GHL API v2 workflows and pushes results back to contact cards immediately after calculations complete.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="mailto:support@rundealengine.com">Support Contact</a>
+            </div>
+            &copy; 2026 DealEngine. All rights reserved.
+        </footer>
+    </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content)
+
         <footer>&copy; 2026 DealEngine. All rights reserved.</footer>
     </body>
     </html>
