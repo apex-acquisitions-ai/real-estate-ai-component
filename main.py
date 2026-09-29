@@ -521,6 +521,11 @@ def terms_of_service():
             <h2>5. Contact Information</h2>
             <p>✉️ <strong>Support Email:</strong> <a href="mailto:support@rundealengine.com">support@rundealengine.com</a></p>
         </div>
+        <footer>&copy; 2026 DealEngine. All rights reserved.</footer>
+    </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content)
 
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
@@ -587,12 +592,6 @@ def home_page():
             </div>
             &copy; 2026 DealEngine. All rights reserved.
         </footer>
-    </body>
-    </html>
-    """
-    return HTMLResponse(content=html_content)
-
-        <footer>&copy; 2026 DealEngine. All rights reserved.</footer>
     </body>
     </html>
     """
